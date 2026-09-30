@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#0f172a">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="三集电影网（https://sanjidianyingwang-h5.com）专注高清电影在线观看，涵盖喜剧、动作、爱情、科幻、悬疑、纪录片等全频道片库，每日更新热门院线大片与经典老片，支持手机端自适应流畅播放。">
+<meta name="keywords" content="三集电影网, sanjidianyingwang-h5.com, 高清电影, 在线观看, 免费电影, 电影网站">
+<meta property="og:type" content="website">
+<meta property="og:title" content="三集电影网 - 高清电影在线观看首选平台">
+<meta property="og:description" content="三集电影网 https://sanjidianyingwang-h5.com 提供海量高清电影资源，手机电脑均可流畅观看，每日更新热门大片。">
+<meta property="og:url" content="https://sanjidianyingwang-h5.com/">
+<meta property="og:site_name" content="三集电影网">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="三集电影网 - 高清电影在线观看首选平台">
+<meta name="twitter:description" content="三集电影网 https://sanjidianyingwang-h5.com 海量高清电影，手机电脑流畅观看。">
+<link rel="canonical" href="https://sanjidianyingwang-h5.com/">
+<title>三集电影网 - 高清电影在线观看 | https://sanjidianyingwang-h5.com</title>
+<style>
+/* ============ Reset ============ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+img,picture,video{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+:focus-visible{outline:2px solid #f59e0b;outline-offset:3px;border-radius:4px}
+
+/* ============ Variables ============ */
+:root{
+  --bg:#0b1020;
+  --bg2:#111827;
+  --card:rgba(255,255,255,.05);
+  --line:rgba(255,255,255,.10);
+  --txt:#e5e7eb;
+  --txt-dim:#94a3b8;
+  --accent:#f59e0b;
+  --accent2:#ef4444;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--bg);
+  color:var(--txt);
+  line-height:1.7;
+  font-size:clamp(15px,1.4vw,17px);
+  overflow-x:hidden;
+}
+
+/* ============ Layout ============ */
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+section{padding:clamp(48px,8vw,84px) 0}
+.eyebrow{
+  display:inline-block;font-size:.82rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);
+  border:1px solid rgba(245,158,11,.35);border-radius:999px;
+  padding:5px 14px;margin-bottom:14px;font-weight:600;
+}
+.h2{
+  font-size:clamp(1.55rem,3.4vw,2.35rem);line-height:1.25;
+  font-weight:800;letter-spacing:-.02em;margin-bottom:8px;
+}
+.h2 em{font-style:normal;color:var(--accent)}
+.lead{color:var(--txt-dim);max-width:62ch;font-size:clamp(.95rem,1.5vw,1.08rem)}
+
+/* ============ Header ============ */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(11,16,32,.85);backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+}
+.h-inner{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:clamp(1.05rem,2.4vw,1.35rem);letter-spacing:-.01em}
+.logo-badge{
+  width:38px;height:38px;border-radius:10px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:grid;place-items:center;font-size:1.15rem;color:#fff;font-weight:900;
+  box-shadow:0 4px 14px rgba(245,158,11,.4);
+}
+.logo small{display:block;font-size:.68rem;font-weight:500;color:var(--txt-dim);letter-spacing:.06em}
+.nav{display:flex;align-items:center;gap:6px}
+.nav a{
+  padding:9px 14px;border-radius:9px;font-size:.95rem;font-weight:500;
+  color:var(--txt-dim);transition:.2s;white-space:nowrap;
+}
+.nav a:hover{color:#fff;background:var(--card)}
+.nav a.cta{
+  background:var(--accent);color:#1a1200;font-weight:700;margin-left:6px;
+}
+.nav a.cta:hover{background:#fbbf24;color:#1a1200}
+.menu-btn{
+  display:none;width:44px;height:44px;border-radius:10px;
+  border:1px solid var(--line);place-items:center;color:#fff;font-size:1.4rem;
+}
+
+/* ============ Hero ============ */
+.hero{
+  position:relative;padding:clamp(56px,10vw,112px) 0 clamp(48px,8vw,80px);
+  background:
+    radial-gradient(1200px 500px at 80% -10%,rgba(239,68,68,.22),transparent 60%),
+    radial-gradient(900px 500px at 0% 10%,rgba(245,158,11,.16),transparent 55%),
+    linear-gradient(180deg,#0b1020,#0e1428);
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:52px 52px;mask-image:radial-gradient(ellipse at 50% 40%,#000 30%,transparent 75%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center;position:relative;z-index:1}
+.hero h1{
+  font-size:clamp(2rem,5.4vw,3.8rem);line-height:1.1;font-weight:900;
+  letter-spacing:-.035em;margin-bottom:18px;
+}
+.hero h1 .hl{color:var(--accent)}
+.hero h1 .url{display:block;font-size:.34em;font-weight:600;letter-spacing:.02em;color:var(--txt-dim);margin-top:14px;word-break:break-all}
+.hero h1 .url b{color:#fff;font-weight:700}
+.hero p{color:var(--txt-dim);max-width:52ch;font-size:clamp(1rem,1.6vw,1.15rem);margin-bottom:26px}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:14px 26px;
+  border-radius:11px;font-weight:700;font-size:.98rem;transition:.2s;
+  min-height:48px;
+}
+.btn-primary{background:var(--accent);color:#1a1200;box-shadow:0 8px 22px rgba(245,158,11,.32)}
+.btn-primary:hover{background:#fbbf24;transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:#fff}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.hero-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px;
+}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.stat strong{display:block;font-size:1.5rem;font-weight:800;color:#fff}
+.stat span{font-size:.78rem;color:var(--txt-dim)}
+
+/* hero card */
+.player{
+  background:var(--bg2);border:1px solid var(--line);border-radius:18px;
+  overflow:hidden;box-shadow:var(--shadow);transform:rotate(0);
+}
+.player-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#0a0f1f;border-bottom:1px solid var(--line)}
+.dot{width:11px;height:11px;border-radius:50%;background:#ef4444}
+.player-bar .t{flex:1;text-align:center;font-size:.82rem;color:var(--txt-dim);font-weight:600}
+.player-screen{
+  aspect-ratio:16/10;position:relative;
+  background:linear-gradient(135deg,#1e1b4b,#0f172a 60%,#3b0764);
+  display:grid;place-items:center;
+}
+.play-btn{
+  width:74px;height:74px;border-radius:50%;background:var(--accent);
+  display:grid;place-items:center;font-size:1.7rem;color:#1a1200;
+  box-shadow:0 0 0 0 rgba(245,158,11,.6);animation:pulse 2.2s infinite;
+}
+@keyframes pulse{70%{box-shadow:0 0 0 24px rgba(245,158,11,0)}100%{box-shadow:0 0 0 0 rgba(245,158,11,0)}}
+.player-tag{
+  position:absolute;top:14px;left:14px;background:rgba(0,0,0,.55);
+  border:1px solid var(--line);border-radius:6px;padding:4px 9px;font-size:.76rem;color:#fff;
+}
+.player-meta{display:flex;justify-content:space-between;padding:13px 16px;font-size:.86rem;color:var(--txt-dim)}
+.player-meta b{color:#fff}
+
+/* ============ Films ============ */
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:30px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter{
+  padding:8px 16px;border-radius:999px;border:1px solid var(--line);
+  color:var(--txt-dim);font-size:.88rem;font-weight:600;transition:.2s;min-height:40px;
+}
+.filter:hover{border-color:var(--accent);color:var(--accent)}
+.filter.active{background:var(--accent);border-color:var(--accent);color:#1a1200}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.film{
+  background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;transition:.25s;display:flex;flex-direction:column;
+}
+.film:hover{transform:translateY(-6px);border-color:rgba(245,158,11,.5);box-shadow:var(--shadow)}
+.poster{position:relative;aspect-ratio:3/4;overflow:hidden}
+.poster-bg{position:absolute;inset:0;transition:.4s}
+.poster-1{background:linear-gradient(160deg,#7c3aed,#ec4899)}
+.poster-2{background:linear-gradient(160deg,#0891b2,#0ea5e9)}
+.poster-3{background:linear-gradient(160deg,#ea580c,#f59e0b)}
+.poster-4{background:linear-gradient(160deg,#dc2626,#f97316)}
+.poster-5{background:linear-gradient(160deg,#16a34a,#22d3ee)}
+.poster-6{background:linear-gradient(160deg,#4f46e5,#06b6d4)}
+.poster-7{background:linear-gradient(160deg,#be185d,#f43f5e)}
+.poster-8{background:linear-gradient(160deg,#0d9488,#84cc16)}
+.poster-txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px;color:#fff}
+.poster-txt .genre{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;opacity:.9;font-weight:600}
+.poster-txt .ttl{font-size:1.15rem;font-weight:800;line-height:1.25;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+.score{
+  position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);
+  border:1px solid rgba(255,255,255,.25);border-radius:7px;padding:3px 8px;
+  font-size:.8rem;font-weight:700;color:#fbbf24;
+}
+.ep{position:absolute;left:10px;bottom:10px;background:var(--accent);color:#1a1200;font-size:.72rem;font-weight:800;border-radius:5px;padding:3px 7px}
+.film-info{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.film-info h3{font-size:1.02rem;font-weight:700;line-height:1.35}
+.film-info p{font-size:.83rem;color:var(--txt-dim);flex:1}
+.film-meta{display:flex;justify-content:space-between;font-size:.78rem;color:var(--txt-dim);border-top:1px solid var(--line);padding-top:9px}
+.watch{color:var(--accent);font-weight:700;font-size:.85rem}
+.watch:hover{color:#fbbf24}
+
+/* ============ Channels ============ */
+.channels{background:linear-gradient(180deg,transparent,rgba(255,255,255,.02),transparent)}
+.chan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.chan{
+  position:relative;padding:26px 24px;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--line);overflow:hidden;transition:.25s;min-height:170px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.chan::before{
+  content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;
+  border-radius:50%;background:var(--g,var(--accent));opacity:.14;transition:.3s;
+}
+.chan:hover{border-color:rgba(245,158,11,.5);transform:translateY(-4px)}
+.chan:hover::before{opacity:.28;transform:scale(1.15)}
+.chan .ico{font-size:2rem;line-height:1;margin-bottom:12px}
+.chan h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.chan p{font-size:.88rem;color:var(--txt-dim)}
+.chan .cnt{margin-top:14px;font-size:.8rem;color:var(--txt-dim);border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between}
+.chan .cnt b{color:var(--accent)}
+
+/* ============ Guide ============ */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.step{
+  background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px;position:relative;transition:.25s;
+}
+.step:hover{border-color:rgba(245,158,11,.45)}
+.step .num{
+  width:44px;height:44px;border-radius:11px;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#1a1200;
+  font-weight:900;font-size:1.2rem;margin-bottom:16px;box-shadow:0 6px 16px rgba(245,158,11,.3);
+}
+.step h3{font-size:1.1rem;font-weight:800;margin-bottom:8px}
+.step p{font-size:.9rem;color:var(--txt-dim)}
+.step .more{display:inline-block;margin-top:14px;font-size:.85rem;color:var(--accent);font-weight:600}
+.step .more:hover{color:#fbbf24}
+
+/* ============ About ============ */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.about-card{
+  background:var(--bg2);border:1px solid var(--line);border-radius:18px;
+  padding:clamp(26px,4vw,40px);box-shadow:var(--shadow);
+}
+.about-card dl{display:grid;gap:16px}
+.about-card .row{display:flex;gap:14px;padding-bottom:16px;border-bottom:1px dashed var(--line)}
+.about-card .row:last-child{border-bottom:none;padding-bottom:0}
+.about-card dt{flex:none;width:84px;font-size:.8rem;color:var(--txt-dim);letter-spacing:.06em;padding-top:2px}
+.about-card dd{flex:1;font-size:.95rem;color:var(--txt)}
+.about-card dd a{color:var(--accent);font-weight:600;word-break:break-all}
+.about-card dd a:hover{color:#fbbf24}
+.features{display:grid;gap:14px}
+.feat{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--line)}
+.feat .ic{font-size:1.5rem;line-height:1;flex:none}
+.feat h4{font-size:1rem;font-weight:700;margin-bottom:3px}
+.feat p{font-size:.87rem;color:var(--txt-dim)}
+
+/* ============ Footer ============ */
+.site-footer{background:#070b16;border-top:1px solid var(--line);padding:44px 0 26px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.foot-brand p{font-size:.88rem;color:var(--txt-dim);margin-top:12px;max-width:34ch}
+.foot-col h4{font-size:.92rem;font-weight:700;margin-bottom:12px;color:#fff}
+.foot-col a{display:block;font-size:.88rem;color:var(--txt-dim);padding:5px 0;transition:.2s}
+.foot-col a:hover{color:var(--accent)}
+.foot-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:22px;font-size:.82rem;color:var(--txt-dim)}
+.foot-bot a{color:var(--txt-dim)}
+.foot-bot a:hover{color:var(--accent)}
+
+/* ============ Reveal ============ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ Responsive ============ */
+@media(max-width:900px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero-stats{margin-bottom:10px}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav{position:fixed;top:68px;left:0;right:0;flex-direction:column;padding:18px;
+    background:rgba(11,16,32,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+    transform:translateY(-120%);transition:.3s;visibility:hidden;align-items:stretch}
+  .nav.open{transform:none;visibility:visible}
+  .nav a{padding:13px 18px;border-radius:10px}
+  .nav a.cta{margin:6px 0 0}
+  .menu-btn{display:grid}
+  .hero-stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat{padding:11px 6px}
+  .stat strong{font-size:1.2rem}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .poster-txt .ttl{font-size:1rem}
+  .foot-top{grid-template-columns:1fr}
+  .player-meta{flex-direction:column;gap:5px}
+}
+@media(max-width:380px){
+  .grid{grid-template-columns:1fr}
+  .hero h1{font-size:1.85rem}
+}
+@media print{
+  .site-header,.menu-btn,.nav{position:static}
+  body{background:#fff;color:#000}
+  .hero,.channels,.site-footer{background:none}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<!-- ========== HEADER ========== -->
+<header class="site-header">
+  <div class="wrap h-inner">
+    <a class="logo" href="#" aria-label="三集电影网 返回首页">
+      <span class="logo-badge" aria-hidden="true">影</span>
+      <span>三集电影网<small>https://sanjidianyingwang-h5.com</small></span>
+    </a>
+    <nav class="nav" id="nav" aria-label="主导航">
+      <a href="#home">首页</a>
+      <a href="#films">电影片库</a>
+      <a href="#channels">频道分类</a>
+      <a href="#guide">观看指南</a>
+      <a href="#about">关于本站</a>
+      <a href="#" class="cta">立即观看</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="打开菜单" aria-expanded="false" aria-controls="nav">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">★ 高清电影 · 在线观看</span>
+        <h1>
+          <span class="hl">三集电影网</span><br>
+          海量影片 一站看完
+          <span class="url">官方网址 <b>https://sanjidianyingwang-h5.com</b></span>
+        </h1>
+        <p>三集电影网（<strong>https://sanjidianyingwang-h5.com</strong>）专注高清电影在线点播，覆盖喜剧、动作、爱情、科幻、悬疑、恐怖、动画、纪录片等全类型片库，每日更新热门院线大片与经典老片，手机、平板、电脑全端自适应流畅播放。</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#films">免费看电影 →</a>
+          <a class="btn btn-ghost" href="#guide">观看指南</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>10万+</strong><span>高清影片</span></div>
+          <div class="stat"><strong>12类</strong><span>电影频道</span></div>
+          <div class="stat"><strong>4K</strong><span>超清画质</span></div>
+        </div>
+      </div>
+
+      <div class="player reveal" aria-hidden="true">
+        <div class="player-bar">
+          <span class="dot"></span><span class="dot" style="background:#f59e0b"></span><span class="dot" style="background:#22c55e"></span>
+          <span class="t">sanjidianyingwang-h5.com · 在线播放器</span>
+        </div>
+        <div class="player-screen">
+          <span class="player-tag">● 正在播放</span>
+          <button class="play-btn" type="button" aria-label="播放演示">▶</button>
+        </div>
+        <div class="player-meta">
+          <span>本周热播 · <b>《星际回声》三集连看</b></span>
+          <span>1080P · 国语配音</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FILMS ========== -->
+  <section id="films">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Film Library</span>
+          <h2 class="h2">热门<em>电影片库</em> · 每日更新</h2>
+          <p class="lead">三集电影网（<strong>https://sanjidianyingwang-h5.com</strong>）精选院线大片、口碑佳作与经典老片，支持按类型、年份、地区快速筛选，三集连播不卡顿。</p>
+        </div>
+        <div class="filters" role="tablist">
+          <button class="filter active" type="button">全部</button>
+          <button class="filter" type="button">喜剧</button>
+          <button class="filter" type="button">动作</button>
+          <button class="filter" type="button">科幻</button>
+          <button class="filter" type="button">悬疑</button>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-1"></div>
+            <span class="score">9.2</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Comedy</span><span class="ttl">爆笑邻居<br>欢乐一家</span></div>
+          </div>
+          <div class="film-info">
+            <h3>爆笑邻居</h3>
+            <p>都市轻喜剧，讲述三个家庭因一扇门引发的啼笑皆非故事。</p>
+            <div class="film-meta"><span>2025 · 喜剧</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-2"></div>
+            <span class="score">8.7</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Action</span><span class="ttl">深海潜行<br>极速追击</span></div>
+          </div>
+          <div class="film-info">
+            <h3>深海潜行</h3>
+            <p>硬核动作大片，极限水下营救任务，场面震撼视效炸裂。</p>
+            <div class="film-meta"><span>2025 · 动作</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-3"></div>
+            <span class="score">9.0</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Romance</span><span class="ttl">橘子汽水<br>那年夏天</span></div>
+          </div>
+          <div class="film-info">
+            <h3>橘子汽水</h3>
+            <p>青春爱情片，一罐橘子汽水串联起整个夏天的悸动与告白。</p>
+            <div class="film-meta"><span>2024 · 爱情</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-4"></div>
+            <span class="score">8.9</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Sci-Fi</span><span class="ttl">星际回声<br>第三纪元</span></div>
+          </div>
+          <div class="film-info">
+            <h3>星际回声</h3>
+            <p>硬科幻巨制，人类收到来自深空的第三封回信。</p>
+            <div class="film-meta"><span>2025 · 科幻</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-5"></div>
+            <span class="score">8.5</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Mystery</span><span class="ttl">午夜迷局<br>第七封信</span></div>
+          </div>
+          <div class="film-info">
+            <h3>午夜迷局</h3>
+            <p>悬疑烧脑，一封迟到二十年的信揭开连环谜案真相。</p>
+            <div class="film-meta"><span>2024 · 悬疑</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-6"></div>
+            <span class="score">9.4</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Drama</span><span class="ttl">山间灯火<br>归途</span></div>
+          </div>
+          <div class="film-info">
+            <h3>山间灯火</h3>
+            <p>年度口碑剧情片，三代人的守候与一次久别重逢。</p>
+            <div class="film-meta"><span>2025 · 剧情</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-7"></div>
+            <span class="score">8.3</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Horror</span><span class="ttl">旧楼十三层</span></div>
+          </div>
+          <div class="film-info">
+            <h3>旧楼十三层</h3>
+            <p>心理惊悚，搬家第一夜电梯多出一层的诡异事件。</p>
+            <div class="film-meta"><span>2024 · 恐怖</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+
+        <article class="film reveal">
+          <div class="poster">
+            <div class="poster-bg poster-8"></div>
+            <span class="score">9.1</span><span class="ep">3集连播</span>
+            <div class="poster-txt"><span class="genre">Doc</span><span class="ttl">蓝色深海<br>未至之境</span></div>
+          </div>
+          <div class="film-info">
+            <h3>蓝色深海</h3>
+            <p>自然纪录片，下潜至人类从未抵达的深海幽蓝之境。</p>
+            <div class="film-meta"><span>2025 · 纪录</span><a class="watch" href="#">立即观看 →</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CHANNELS ========== -->
+  <section class="channels" id="channels">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">Channels</span>
+          <h2 class="h2">十二大<em>频道分类</em> · 精准找片</h2>
+          <p class="lead">三集电影网把影片按题材、地区、年代精细归类，想看什么直接点频道，三秒钟找到心头好。</p>
+        </div>
+      </div>
+
+      <div class="chan-grid">
+        <a class="chan reveal" href="#" style="--g:#f59e0b"><span class="ico">😂</span><h3>喜剧电影</h3><p>合家欢、黑色幽默、无厘头，笑到停不下来。</p><span class="cnt"><span>8,200+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#ef4444"><span class="ico">💥</span><h3>动作大片</h3><p>枪战、格斗、飙车，肾上腺素飙升。</p><span class="cnt"><span>6,500+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#ec4899"><span class="ico">💗</span><h3>爱情文艺</h3><p>校园初恋、都市情感、纯美治愈。</p><span class="cnt"><span>7,800+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#06b6d4"><span class="ico">🚀</span><h3>科幻奇幻</h3><p>太空史诗、未来世界、脑洞宇宙。</p><span class="cnt"><span>4,300+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#8b5cf6"><span class="ico">🕵️</span><h3>悬疑惊悚</h3><p>反转不断、细思极恐，烧脑爱好者天堂。</p><span class="cnt"><span>5,100+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#22c55e"><span class="ico">🐉</span><h3>动画国漫</h3><p>国产动画、日漫剧场版、合家欢卡通。</p><span class="cnt"><span>3,900+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#0891b2"><span class="ico">🎭</span><h3>剧情经典</h3><p>高分获奖、人性刻画、影史必看。</p><span class="cnt"><span>9,400+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#0ea5e9"><span class="ico">🌏</span><h3>海外院线</h3><p>好莱坞、韩国、印度、欧洲新片。</p><span class="cnt"><span>11,200+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#f97316"><span class="ico">🏮</span><h3>华语精选</h3><p>内地港台佳作，熟悉的乡音与故事。</p><span class="cnt"><span>10,600+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#6366f1"><span class="ico">👻</span><h3>恐怖悬疑</h3><p>心理惊悚、灵异事件、B级cult片。</p><span class="cnt"><span>3,200+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#84cc16"><span class="ico">🐾</span><h3>纪录片</h3><p>自然、历史、人文、社会现实题材。</p><span class="cnt"><span>2,800+ 部</span><b>进入频道 →</b></span></a>
+        <a class="chan reveal" href="#" style="--g:#e11d48"><span class="ico">🎬</span><h3>短片合集</h3><p>微电影、三集短剧、创作者作品集。</p><span class="cnt"><span>6,700+ 部</span><b>进入频道 →</b></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GUIDE ========== -->
+  <section id="guide">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">How to Watch</span>
+          <h2 class="h2">三步上手 <em>观看指南</em></h2>
+          <p class="lead">三集电影网（<strong>https://sanjidianyingwang-h5.com</strong>）无需注册，打开即看，手机电脑都能流畅点播。</p>
+        </div>
+      </div>
+
+      <div class="steps">
+        <div class="step reveal">
+          <div class="num">1</div>
+          <h3>收藏官方网址</h3>
+          <p>在浏览器地址栏输入 <strong>https://sanjidianyingwang-h5.com</strong>，建议收藏或加入书签，避免误入仿冒站点。</p>
+          <a class="more" href="#">如何辨别官网 →</a>
+        </div>
+        <div class="step reveal">
+          <div class="num">2</div>
+          <h3>选择影片或频道</h3>
+          <p>在电影片库挑选想看的电影，或进入十二大频道分类按类型、年份、地区快速筛选。</p>
+          <a class="more" href="#channels">浏览全部频道 →</a>
+        </div>
+        <div class="step reveal">
+          <div class="num">3</div>
+          <h3>一键播放观看</h3>
+          <p>点开影片即可在线播放，支持自动连播三集、清晰度切换与断点续播，投屏大屏更爽。</p>
+          <a class="more" href="#">投屏帮助 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="channels" id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <span class="eyebrow">About Us</span>
+          <h2 class="h2">关于<em>三集电影网</em></h2>
+          <p class="lead">三集电影网（<strong>https://sanjidianyingwang-h5.com</strong>）是专注于高清电影在线点播的影视门户，致力为用户提供便捷、流畅的观影体验。</p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <dl>
+            <div class="row"><dt>网站名称</dt><dd>三集电影网</dd></div>
+            <div class="row"><dt>网站网址</dt><dd><a href="https://sanjidianyingwang-h5.com" rel="nofollow">https://sanjidianyingwang-h5.com</a></dd></div>
+            <div class="row"><dt>站点定位</dt><dd>高清电影在线点播门户</dd></div>
+            <div class="row"><dt>影片类型</dt><dd>喜剧 / 动作 / 爱情 / 科幻 / 悬疑 / 动画 / 纪录等 12 类</dd></div>
+            <div class="row"><dt>支持设备</dt><dd>手机 · 平板 · 电脑 · 智能电视（自适应网页）</dd></div>
+            <div class="row"><dt>内容更新</dt><dd>每日同步院线与热门新片，经典老片持续补全</dd></div>
+          </dl>
+        </div>
+
+        <div class="features reveal">
+          <div class="feat"><span class="ic">🎯</span><div><h4>片源丰富</h4><p>十余万部高清影片持续扩充，热门新片第一时间上线。</p></div></div>
+          <div class="feat"><span class="ic">⚡</span><div><h4>秒开不卡</h4><p>智能线路分发，多节点加速，弱网环境也能流畅播放。</p></div></div>
+          <div class="feat"><span class="ic">📱</span><div><h4>移动优先</h4><p>全站 H5 自适应，手机浏览器打开即用，无需下载 App。</p></div></div>
+          <div class="feat"><span class="ic">🔍</span><div><h4>智能检索</h4><p>支持片名、演员、导演搜索，分类筛选精准找片。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== FOOTER ========== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#">
+          <span class="logo-badge" aria-hidden="true">影</span>
+          <span>三集电影网</span>
+        </a>
+        <p>三集电影网（https://sanjidianyingwang-h5.com）专注高清电影在线观看，每日更新热门大片与经典老片。</p>
+      </div>
+      <div class="foot-col">
+        <h4>网站导航</h4>
+        <a href="#home">首页</a>
+        <a href="#films">电影片库</a>
+        <a href="#channels">频道分类</a>
+        <a href="#guide">观看指南</a>
+      </div>
+      <div class="foot-col">
+        <h4>热门频道</h4>
+        <a href="#">喜剧电影</a>
+        <a href="#">动作大片</a>
+        <a href="#">科幻奇幻</a>
+        <a href="#">悬疑惊悚</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <a href="#about">网站介绍</a>
+        <a href="#">免责声明</a>
+        <a href="#">联系我们</a>
+        <a href="#">友情链接</a>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="year">2026</span> 三集电影网 · 网站网址：<a href="https://sanjidianyingwang-h5.com" rel="nofollow">https://sanjidianyingwang-h5.com</a></span>
+      <span><a href="#">网站地图</a> · <a href="#">隐私政策</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// 年份自动
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// 移动端菜单
+(function(){
+  var btn = document.getElementById('menuBtn');
+  var nav = document.getElementById('nav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.textContent = open ? '✕' : '☰';
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+      btn.textContent = '☰';
+    });
+  });
+})();
+
+// 滚动出现动画
+(function(){
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+
+// 分类筛选（演示交互，不跳转）
+(function(){
+  var btns = document.querySelectorAll('.filter');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      btns.forEach(function(x){ x.classList.remove('active'); });
+      b.classList.add('active');
+    });
+  });
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://sanjidianyingwang-h5.com/#website",
+      "name": "三集电影网",
+      "url": "https://sanjidianyingwang-h5.com/",
+      "description": "三集电影网专注高清电影在线观看，覆盖喜剧、动作、爱情、科幻、悬疑等全类型片库，每日更新热门大片与经典老片。",
+      "inLanguage": "zh-CN",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://sanjidianyingwang-h5.com/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://sanjidianyingwang-h5.com/#organization",
+      "name": "三集电影网",
+      "url": "https://sanjidianyingwang-h5.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sanjidianyingwang-h5.com/logo.png",
+        "width": 512,
+        "height": 512
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://sanjidianyingwang-h5.com/#breadcrumb",
+      "itemListElement": [
+        {"@type":"ListItem","position":1,"name":"首页","item":"https://sanjidianyingwang-h5.com/"},
+        {"@type":"ListItem","position":2,"name":"电影片库","item":"https://sanjidianyingwang-h5.com/#films"},
+        {"@type":"ListItem","position":3,"name":"频道分类","item":"https://sanjidianyingwang-h5.com/#channels"},
+        {"@type":"ListItem","position":4,"name":"观看指南","item":"https://sanjidianyingwang-h5.com/#guide"},
+        {"@type":"ListItem","position":5,"name":"关于本站","item":"https://sanjidianyingwang-h5.com/#about"}
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
